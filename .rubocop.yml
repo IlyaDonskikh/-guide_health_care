@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'db/**/*.rb'
+    - 'config/**/*.rb'
+    - 'bin/**/*'
+  DisplayCopNames: true
+  StyleGuideCopsOnly: true
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 100
+
+Style/Documentation:
+  Enabled: false

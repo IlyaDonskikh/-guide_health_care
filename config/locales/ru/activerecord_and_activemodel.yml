@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      organization: 'Организация'
+    attributes:
+      organization:
+        name: 'Название'
+        address: 'Адрес'
+        description: 'Описание'
+        latitude: 'Широта'
+        longitude: 'Долгота'

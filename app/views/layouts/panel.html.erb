@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Care</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'panel/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'panel/application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to t('.project_name'), panel_root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <%= content_tag :ul, class: 'nav navbar-nav' do %>
+        <%= content_tag :li, class: "#{current_page?(panel_organizations_path) ? 'active' : ''}" do %>
+          <%= link_to t('.organizations'), panel_organizations_path %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="<%= t('.close') %>">
+        <span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="<%= t('.close') %>">
+        <span aria-hidden="true">&times;</span></button>
+      <%= alert %>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted"><%= t('.footer_text') %></p>
+  </div>
+</footer>
+</body>
+</html>

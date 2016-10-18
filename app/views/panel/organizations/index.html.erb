@@ -1,0 +1,29 @@
+<%= page_header t('.title') %>
+<%= link_to t('.create'), new_panel_organization_path, class: 'btn btn-primary' %>
+<%= content_tag :table, class: 'table table-striped' do %>
+  <%= content_tag :thead do %>
+    <%= content_tag :tr do %>
+      <%= content_tag :th, t('.name') %>
+      <%= content_tag :th, t('.description') %>
+      <%= content_tag :th, t('.address') %>
+      <%= content_tag :th, t('.longitude') %>
+      <%= content_tag :th, t('.latitude') %>
+      <%= content_tag :th %>
+    <% end %>
+  <% end %>
+  <%= content_tag :tbody do %>
+    <% @organizations.each do |organization| %>
+      <%= content_tag :tr do %>
+        <%= content_tag :td, organization.name %>
+        <%= content_tag :td, organization.description %>
+        <%= content_tag :td, organization.address %>
+        <%= content_tag :td, organization.longitude %>
+        <%= content_tag :td, organization.latitude %>
+        <%= content_tag :td do %>
+          <%= link_to t('.edit'), edit_panel_organization_path(organization), class: 'btn btn-xs btn-default' %>
+          <%= link_to t('.destroy'), panel_organization_path(organization), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: t('.destroy_confirm')} %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

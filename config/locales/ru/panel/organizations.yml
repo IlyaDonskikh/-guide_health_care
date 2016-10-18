@@ -1,0 +1,22 @@
+ru:
+  panel:
+    organizations:
+      index:
+        title: 'Организации'
+        create: 'Добавить организацию'
+        name: 'Название'
+        address: 'Адрес'
+        description: 'Описание'
+        latitude: 'Широта'
+        longitude: 'Долгота'
+        edit: 'Редактировать'
+        destroy: 'Удалить'
+        destroy_confirm: 'Вы действительно хотите удалить запись?'
+      new:
+        title: 'Добавить организацию'
+      create:
+        success: 'Организация добавлена'
+      edit:
+        title: 'Редактировать организацию'
+      update:
+        success: 'Организация обновлена'

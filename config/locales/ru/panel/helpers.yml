@@ -1,0 +1,8 @@
+ru:
+  helpers:
+    select:
+      prompt: 'Выберите: '
+    submit:
+      create: 'Сохранить'
+      submit: 'Сохранить'
+      update: 'Сохранить'
