@@ -25,6 +25,9 @@
         <%= content_tag :li, class: "#{current_page?(panel_organizations_path) ? 'active' : ''}" do %>
           <%= link_to t('.organizations'), panel_organizations_path %>
         <% end %>
+        <%= content_tag :li, class: "#{current_page?(panel_illnesses_path) ? 'active' : ''}" do %>
+          <%= link_to t('.illnesses'), panel_illnesses_path %>
+        <% end %>
       <% end %>
     </div>
   </div>

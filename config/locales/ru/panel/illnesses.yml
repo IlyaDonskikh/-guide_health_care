@@ -1,0 +1,19 @@
+ru:
+  panel:
+    illnesses:
+      index:
+        title: 'Болезни'
+        create: 'Добавить болезнь'
+        name: 'Название'
+        description: 'Описание'
+        edit: 'Редактировать'
+        destroy: 'Удалить'
+        destroy_confirm: 'Вы действительно хотите удалить запись?'
+      new:
+        title: 'Добавить болезнь'
+      create:
+        success: 'Болезнь добавлена'
+      edit:
+        title: 'Редактировать болезнь'
+      update:
+        success: 'Болезнь обновлена'

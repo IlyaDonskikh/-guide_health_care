@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       organization: 'Организация'
+      illness: 'Болезнь'
     attributes:
       organization:
         name: 'Название'
@@ -9,3 +10,10 @@ ru:
         description: 'Описание'
         latitude: 'Широта'
         longitude: 'Долгота'
+      illness:
+        name: 'Название'
+        description: 'Описание'
+        illness_id: 'Основная болезнь'
+      organization_illness:
+        organization_id: 'Организация'
+        illness_id: 'Болезнь'

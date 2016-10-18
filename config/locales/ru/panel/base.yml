@@ -2,4 +2,11 @@ ru:
   layouts:
     panel:
       organizations: 'Организации'
+      illnesses: 'Болезни'
       close: 'Закрыть'
+  views:
+    pagination:
+      first: 'Первая'
+      previous: 'Предыдущая'
+      next: 'Следующая'
+      last: 'Последняя'

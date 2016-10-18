@@ -20,3 +20,7 @@ ru:
         title: 'Редактировать организацию'
       update:
         success: 'Организация обновлена'
+      form:
+        illnesses: 'Болезни'
+        add_illness: 'Добавить'
+        remove_illness: 'Удалить'

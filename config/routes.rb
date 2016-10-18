@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   scope module: :panel, as: :panel, path: :panel do
     root 'organizations#index'
     resources :organizations, except: :show
+    resources :illnesses, except: :show
   end
 end

@@ -1,9 +1,10 @@
 module Panel
   class OrganizationsController < ApplicationController
     before_action :set_resource, except: [:index, :new, :create]
+    before_action :set_form_resources, except: [:index, :destroy]
 
     def index
-      @organizations = Organization.page(params[:page]).per(15)
+      @organizations = Organization.order(name: :asc).page(params[:page]).per(15)
     end
 
     def new
@@ -41,9 +42,14 @@ module Panel
         @organization = Organization.find(params[:id])
       end
 
+      def set_form_resources
+        @illnesses = Illness.order(name: :asc)
+      end
+
       def organization_params
         params.require(:organization).permit(
-          :name, :description, :address
+          :name, :description, :address,
+          organization_illnesses_attributes: [:id, :illness_id, :_destroy]
         )
       end
   end

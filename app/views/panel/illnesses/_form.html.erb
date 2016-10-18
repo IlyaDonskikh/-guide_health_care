@@ -1,0 +1,8 @@
+<%= bootstrap_form_for([:panel, @illness]) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.collection_select :illness_id, @illnesses, :id, :name, include_blank: true %>
+  <%= content_tag :p do %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
