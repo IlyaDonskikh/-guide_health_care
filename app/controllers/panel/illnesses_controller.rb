@@ -48,7 +48,7 @@ module Panel
 
       def illness_params
         params.require(:illness).permit(
-          :name, :description, :address, :illness_id
+          :name, :description, :illness_id
         )
       end
   end
