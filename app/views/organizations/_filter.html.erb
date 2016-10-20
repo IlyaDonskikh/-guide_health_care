@@ -1,0 +1,19 @@
+<%= content_tag :div, class: 'filter' do %>
+  <%= form_tag organizations_path, method: :get do %>
+    <%= content_tag :div, class: 'filter__field' do %>
+      <%= content_tag :div, t('.address'), class: 'filter__field__label' %>
+      <%= content_tag :div, class: 'filter__field' do %>
+        <%= hidden_field_tag :address %>
+        <%= link_to t('.address_select'), '#', class: 'filter__field__link filter__field__link_address' %>
+        <%= content_tag :div, t('.address_hint'), class: 'filter__field__hint' %>
+      <% end %>
+    <% end %>
+    <%= content_tag :div, class: 'filter__field' do %>
+      <%= content_tag :div, t('.illness'), class: 'filter__field__label' %>
+      <%= content_tag :div, class: 'filter__field' do %>
+        <%= hidden_field_tag :illness %>
+        <%= link_to t('.illness_select'), '#', class: 'filter__field__link filter__field__link_illness' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

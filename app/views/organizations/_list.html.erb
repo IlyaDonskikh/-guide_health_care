@@ -1,0 +1,21 @@
+<%= content_tag :table, class: 'organizations-list' do %>
+  <% @organizations.each_with_index do |organization, index| %>
+    <%= content_tag :tr do %>
+      <%= content_tag :td, class: 'organizations-list__number' do %>
+        <%= index + 1 %>
+      <% end %>
+      <%= content_tag :td, class: 'organizations-list__info' do %>
+        <%= content_tag :div, class: 'organizations-list__info__name' do %>
+          <%= link_to organization.name, organization %><br>
+        <% end %>
+        <%= content_tag :div, class: 'organizations-list__info__description' do %>
+          <%= organization.description %>
+        <% end %>
+        <%= content_tag :ul, class: 'organizations-list__info__list' do %>
+          <%= content_tag :li, organization.address %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= paginate @organizations %>

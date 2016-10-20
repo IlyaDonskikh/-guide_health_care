@@ -1,0 +1,10 @@
+ru:
+  organizations:
+    index:
+      title: 'Справочник организаций'
+    filter:
+      address: 'Адрес'
+      address_select: 'Укажите адрес'
+      address_hint: 'Мы отсортируем учреждения по удалённости и сначала покажем ближайшие к этому адресу'
+      illness: 'Проблема'
+      illness_select: 'Любая'

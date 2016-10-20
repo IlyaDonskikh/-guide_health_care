@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     resources :organizations, except: :show
     resources :illnesses, except: :show
   end
+
+  root 'organizations#index'
+  resources :organizations, only: [:index, :show]
 end
