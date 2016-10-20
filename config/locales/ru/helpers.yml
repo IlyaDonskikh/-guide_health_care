@@ -1,0 +1,6 @@
+ru:
+  distance:
+    centi: "cм"
+    unit: "м"
+    thousand: "км"
+    billion: "т.км"

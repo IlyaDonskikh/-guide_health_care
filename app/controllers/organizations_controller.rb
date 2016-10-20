@@ -1,8 +1,6 @@
 class OrganizationsController < ApplicationController
   def index
-    @organizations = Organization.includes(:illnesses)
-                                  .order(name: :asc)
-                                  .page(params[:page]).per(15)
+    @organizations = Organization.includes(:illnesses).page(params[:page]).per(15)
     apply_filter
   end
 

@@ -8,7 +8,7 @@ class Organization < ApplicationRecord
   accepts_nested_attributes_for :organization_illnesses, allow_destroy: true
 
   ## Scopes
-  scope :filter_address, -> (address) { where('address like :address', address: "%#{address}%") }
+  scope :filter_address, -> (address) { near(address) }
   scope :filter_illness, -> (illness) { where(illnesses: { name: illness }) }
 
   ## Validates

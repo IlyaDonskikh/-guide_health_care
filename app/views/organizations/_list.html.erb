@@ -6,7 +6,12 @@
       <% end %>
       <%= content_tag :td, class: 'organizations-list__info' do %>
         <%= content_tag :div, class: 'organizations-list__info__name' do %>
-          <%= link_to organization.name, organization %><br>
+          <%= link_to organization.name, organization %>
+          <% if organization.try(:distance) %>
+            <%= content_tag :div, class: 'organizations-list__info__name__distance' do %>
+              <%= '~' + number_to_human(organization.distance * 1000, units: :distance) %>
+            <% end %>
+          <% end %>
         <% end %>
         <%= content_tag :div, class: 'organizations-list__info__description' do %>
           <%= organization.description %>
