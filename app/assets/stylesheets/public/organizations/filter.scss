@@ -1,0 +1,51 @@
+.filter {
+  border-bottom: dotted 2px #b9b2aa;
+
+  &__field {
+    margin-bottom: 10px;
+
+    &__label {
+      display: inline-block;
+      vertical-align: top;
+      width: 200px;
+      line-height: 40px;
+    }
+    &__input {
+      display: inline-block;
+
+      &__block {
+        height: 30px;
+        line-height: 30px;
+        border: solid 1px #4990e2;
+        border-radius: 6px;
+        background: #fbfaf8;
+
+        text-decoration: none;
+        font-size: 14px;
+
+        &_address {
+          width: 300px;
+        }
+        &_illness {
+          width: 200px;
+        }
+
+        &__link {
+          display: block;
+          height: 30px;
+          width: 100%;
+          line-height: 30px;
+          text-indent: 6px;
+          color: #979691;
+          text-decoration: none;
+          font-size: 14px;
+        }
+      }
+
+      &__hint {
+        color: #b1adac;
+        font-size: 12px;
+      }
+    }
+  }
+}
