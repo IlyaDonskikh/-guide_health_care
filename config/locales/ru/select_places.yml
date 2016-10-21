@@ -1,0 +1,4 @@
+ru:
+  select_places:
+    form:
+      submit: 'Выбрать'

@@ -1,0 +1,61 @@
+popupOpen("<%= j render 'form' %>");
+
+this.ya_init = function () {
+  return $('.yandex-mapJS').not('.done').addClass('done').each(function () {
+    var $map = $(this);
+    var map;
+    var coords = [55.75396, 37.620393];
+    var mapInit = function (coords) {
+      map = new ymaps.Map($map[0], {center: coords, zoom: 10});
+      map.events.add('click', function (event) {
+        setResult(event.get('coords'));
+        map.geoObjects.removeAll();
+        addPlacemark(event.get('coords'));
+      });
+      var searchControl = map.controls.get('searchControl');
+      searchControl.options.set('noPlacemark', true);
+      searchControl.events.add('resultselect', function (event) {
+        searchControl.getResult(event.get('index')).then(function (res) {
+          setResult(res.geometry.getCoordinates());
+          addPlacemark(res.geometry.getCoordinates());
+          map.setCenter(res.geometry.getCoordinates());
+        }, function (err) {
+          console.log("Ошибка" + err);
+        });
+      });
+    };
+    var addPlacemark = function (coords) {
+      var placemark = new ymaps.Placemark(coords, {}, {draggable: true});
+      map.geoObjects.add(placemark);
+      placemark.events.add('dragend', function (event) {
+        setResult(placemark.geometry.getCoordinates());
+      });
+    };
+    var setResult = function (coords) {
+      var myGeocoder = ymaps.geocode(coords);
+      $('.select-places__actions__submitJS').prop('disabled', true);
+      myGeocoder.then(
+        function (res) {
+          var nearest = res.geoObjects.get(0);
+          var name = nearest.properties.get('name');
+          $('.select-places__inputJS').val(name);
+          $('.select-places__actions__submitJS').prop('disabled', false);
+        },
+        function (err) {
+          alert('Ошибка' + err);
+        }
+      );
+    };
+    mapInit(coords);
+    addPlacemark(coords);
+    setResult(coords);
+  });
+};
+
+$(function () {
+  if (window.ymaps) {
+    ya_init();
+  } else {
+    $.getScript("//api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU&onload=ya_init");
+  }
+});

@@ -1,0 +1,13 @@
+<%= content_tag :div, class: 'select-places' do %>
+  <%= form_tag select_places_path, remote: true do %>
+    <%= content_tag :div, class: 'select-places__header' do %>
+    <% end %>
+    <%= hidden_field_tag :address, '', class: 'select-places__inputJS' %>
+    <%= content_tag :div, class: 'select-places__map' do %>
+      <%= content_tag :div, '', class: 'yandex-map yandex-mapJS' %>
+    <% end %>
+    <%= content_tag :div, class: 'select-places__actions' do %>
+      <%= submit_tag t('.submit'), class: 'select-places__actions__submit select-places__actions__submitJS' %>
+    <% end %>
+  <% end %>
+<% end %>

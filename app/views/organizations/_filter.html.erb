@@ -1,11 +1,11 @@
 <%= content_tag :div, class: 'organizations-index-filter' do %>
-  <%= form_tag organizations_path, method: :get do %>
+  <%= form_tag organizations_path, method: :get, remote: true do %>
     <%= content_tag :div, class: 'organizations-index-filter__item' do %>
       <%= content_tag :div, t('.address'), class: 'organizations-index-filter__item__label' %>
       <%= content_tag :div, class: 'organizations-index-filter__item__field' do %>
-        <%= hidden_field_tag :address %>
+        <%= hidden_field_tag :address, '', class: 'organizations-index-filter__item__field__inputJS' %>
         <%= content_tag :div, class: 'organizations-index-filter__item__field__input' do %>
-          <%= link_to t('.address_select'), '#', class: 'organizations-index-filter__item__field__input__link' %>
+          <%= link_to t('.address_select'), new_select_place_path, remote: true, class: 'organizations-index-filter__item__field__input__link organizations-index-filter__item__field__input__linkJS' %>
         <% end %>
         <%= content_tag :div, t('.address_hint'), class: 'organizations-index-filter__item__field__hint' %>
       <% end %>

@@ -1,3 +1,5 @@
 <%= content_tag :h1, t('.title') %>
 <%= render 'filter' %>
-<%= render 'list' %>
+<%= content_tag :div, class: 'organizations-index-listJS' do %>
+  <%= render 'list' %>
+<% end %>

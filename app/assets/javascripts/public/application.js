@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require magnific-popup
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .

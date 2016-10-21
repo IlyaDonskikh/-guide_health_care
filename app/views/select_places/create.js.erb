@@ -1,0 +1,4 @@
+$('.organizations-index-filter__item__field__inputJS').val('<%= @search_result[:address] %>');
+$('.organizations-index-filter__item__field__inputJS').trigger('change');
+$('.organizations-index-filter__item__field__input__linkJS').html('<%= @search_result[:address] %>');
+popupClose();
