@@ -1,21 +1,21 @@
-<%= content_tag :div, class: 'filter' do %>
+<%= content_tag :div, class: 'organizations-index-filter' do %>
   <%= form_tag organizations_path, method: :get do %>
-    <%= content_tag :div, class: 'filter__field' do %>
-      <%= content_tag :div, t('.address'), class: 'filter__field__label' %>
-      <%= content_tag :div, class: 'filter__field__input' do %>
+    <%= content_tag :div, class: 'organizations-index-filter__item' do %>
+      <%= content_tag :div, t('.address'), class: 'organizations-index-filter__item__label' %>
+      <%= content_tag :div, class: 'organizations-index-filter__item__field' do %>
         <%= hidden_field_tag :address %>
-        <%= content_tag :div, class: 'filter__field__input__block filter__field__input__block_address' do %>
-          <%= link_to t('.address_select'), '#', class: 'filter__field__input__block__link' %>
+        <%= content_tag :div, class: 'organizations-index-filter__item__field__input' do %>
+          <%= link_to t('.address_select'), '#', class: 'organizations-index-filter__item__field__input__link' %>
         <% end %>
-        <%= content_tag :div, t('.address_hint'), class: 'filter__field__input__hint' %>
+        <%= content_tag :div, t('.address_hint'), class: 'organizations-index-filter__item__field__hint' %>
       <% end %>
     <% end %>
-    <%= content_tag :div, class: 'filter__field' do %>
-      <%= content_tag :div, t('.illness'), class: 'filter__field__label' %>
-      <%= content_tag :div, class: 'filter__field__input' do %>
-        <%= content_tag :div, class: 'filter__field__input__block filter__field__input__block_illness' do %>
-          <%= hidden_field_tag :illness %>
-          <%= link_to t('.illness_select'), '#', class: 'filter__field__input__block__link' %>
+    <%= content_tag :div, class: 'organizations-index-filter__item' do %>
+      <%= content_tag :div, t('.illness'), class: 'organizations-index-filter__item__label' %>
+      <%= content_tag :div, class: 'organizations-index-filter__item__field' do %>
+        <%= hidden_field_tag :illness %>
+        <%= content_tag :div, class: 'organizations-index-filter__item__field__input' do %>
+          <%= link_to t('.illness_select'), '#', class: 'organizations-index-filter__item__field__input__link' %>
         <% end %>
       <% end %>
     <% end %>

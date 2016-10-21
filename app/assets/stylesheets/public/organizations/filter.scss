@@ -1,7 +1,7 @@
-.filter {
+.organizations-index-filter {
   border-bottom: dotted 2px #b9b2aa;
 
-  &__field {
+  &__item {
     margin-bottom: 10px;
 
     &__label {
@@ -10,10 +10,11 @@
       width: 200px;
       line-height: 40px;
     }
-    &__input {
+
+    &__field {
       display: inline-block;
 
-      &__block {
+      &__input {
         height: 30px;
         line-height: 30px;
         border: solid 1px #4990e2;
@@ -36,6 +37,7 @@
           width: 100%;
           line-height: 30px;
           text-indent: 6px;
+          padding-right: 6px;
           color: #979691;
           text-decoration: none;
           font-size: 14px;
@@ -47,5 +49,11 @@
         font-size: 12px;
       }
     }
+  }
+}
+
+.organizations-index-filter {
+  &__row {
+
   }
 }
