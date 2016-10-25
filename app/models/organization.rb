@@ -15,6 +15,6 @@ class Organization < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   ## Callbacks
-  after_validation :geocode
+  after_validation :geocode, if: :address_changed?
 
 end

@@ -4,11 +4,12 @@ class SelectPlacesController < ApplicationController
 
   def create
     @search_result = search_result_params
+    @address = Geocoder.address(@search_result[:coords])
   end
 
   private
 
     def search_result_params
-      params.permit(:address)
+      params.permit(:coords)
     end
 end

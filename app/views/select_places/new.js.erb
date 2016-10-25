@@ -32,19 +32,7 @@ this.ya_init = function () {
       });
     };
     var setResult = function (coords) {
-      var myGeocoder = ymaps.geocode(coords);
-      $('.select-places__actions__submitJS').prop('disabled', true);
-      myGeocoder.then(
-        function (res) {
-          var nearest = res.geoObjects.get(0);
-          var name = nearest.properties.get('name');
-          $('.select-places__inputJS').val(name);
-          $('.select-places__actions__submitJS').prop('disabled', false);
-        },
-        function (err) {
-          alert('Ошибка' + err);
-        }
-      );
+      $('.select-places__inputJS').val(coords);
     };
     mapInit(coords);
     addPlacemark(coords);

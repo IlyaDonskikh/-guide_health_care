@@ -1,4 +1,5 @@
 Geocoder.configure(
-  # set default units to kilometers:
+  lookup: :yandex,
+  language: :ru,
   units: :km
 )
