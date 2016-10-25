@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   def index
-    @organizations = Organization.includes(:illnesses).page(params[:page]).per(15)
+    @organizations = Organization.includes(:illnesses)
+    @address_coords = Geocoder.coordinates(filter_params[:address]) if filter_params[:address]
     apply_filter
   end
 

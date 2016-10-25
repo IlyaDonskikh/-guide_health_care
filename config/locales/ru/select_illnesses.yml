@@ -1,0 +1,5 @@
+ru:
+  select_illnesses:
+    form:
+      select_illness: 'Указатель болезней'
+      placeholder_illness: 'Введите несколько букв из диагноза'

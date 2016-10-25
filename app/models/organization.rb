@@ -9,7 +9,7 @@ class Organization < ApplicationRecord
 
   ## Scopes
   scope :filter_address, -> (address) { near(address) }
-  scope :filter_illness, -> (illness) { where(illnesses: { name: illness }) }
+  scope :filter_illness, -> (illness_id) { where(illnesses: { id: illness_id }) }
 
   ## Validates
   validates :name, presence: true, uniqueness: true

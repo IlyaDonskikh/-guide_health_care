@@ -1,0 +1,39 @@
+.select-illnesses {
+  &__header {
+    margin-bottom: 30px;
+  }
+  &__label {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  &__input {
+    height: 48px;
+    width: 100%;
+    border-radius: 6px;
+    border: solid 1px #4990e2;
+    text-indent: 20px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, .075);
+  }
+  &__content {
+    max-height: 500px;
+    overflow: auto;
+  }
+  &__group {
+    margin-bottom: 24px;
+  }
+  &__items {
+    list-style: none;
+    padding: inherit;
+  }
+  &__item {
+    margin-bottom: 14px;
+  }
+  &__item-link {
+    color: #0c5bc0;
+    text-decoration: none;
+    border-bottom: dashed 1px #e0e0e0;
+    margin-bottom: 14px;
+  }
+}

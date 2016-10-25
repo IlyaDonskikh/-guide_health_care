@@ -7,9 +7,9 @@
       <%= content_tag :td, class: 'organizations-list__info' do %>
         <%= content_tag :div, class: 'organizations-list__info__name' do %>
           <%= link_to organization.name, organization %>
-          <% if organization.try(:distance) %>
+          <% if @address_coords.present? %>
             <%= content_tag :div, class: 'organizations-list__info__name__distance' do %>
-              <%= '~' + number_to_human(organization.distance * 1000, units: :distance) %>
+              <%= '~' + number_to_human(organization.distance_to(@address_coords) * 1000, units: :distance) %>
             <% end %>
           <% end %>
         <% end %>
@@ -23,4 +23,3 @@
     <% end %>
   <% end %>
 <% end %>
-<%= paginate @organizations %>

@@ -1,0 +1,24 @@
+popupOpen("<%= j render 'form' %>");
+
+$('.select-illnesses__item-linkJS').click(function (e) {
+  e.preventDefault();
+  $('.select-illnesses__inputJS').val($(this).data('id'));
+  $(this).closest('form').trigger('submit');
+});
+$('.select-illnesses__inputJS').keyup(function () {
+  var query = $(this).val();
+  var groups = $('.select-illnesses__groupJS');
+  var items = $('.select-illnesses__item-linkJS');
+  items.hide();
+  items.each(function () {
+    if ($(this).text().indexOf(query) != -1) {
+      $(this).show();
+    }
+  });
+  groups.show();
+  groups.each(function () {
+    if ($(this).find('.select-illnesses__item-linkJS:visible').length == 0) {
+      $(this).hide()
+    }
+  });
+});

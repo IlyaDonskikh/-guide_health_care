@@ -1,0 +1,22 @@
+<%= content_tag :div, class: 'select-illnesses' do %>
+  <%= form_tag select_illnesses_path, remote: true do %>
+    <%= content_tag :div, class: 'select-illnesses__header' do %>
+      <%= content_tag :div, t('.select_illness'), class: 'select-illnesses__label' %>
+      <%= text_field_tag :illness_id, '', placeholder: t('.placeholder_illness'), class: 'select-illnesses__input select-illnesses__inputJS' %>
+    <% end %>
+    <%= content_tag :div, class: 'select-illnesses__content' do %>
+      <% @illness_groups.each do |key, illnesses| %>
+        <%= content_tag :div, class: 'select-illnesses__group select-illnesses__groupJS' do %>
+          <%= content_tag :div, key, class: 'select-illnesses__label' %>
+          <%= content_tag :ul, class: 'select-illnesses__items' do %>
+            <% illnesses.each do |illness| %>
+              <%= content_tag :li, class: 'select-illnesses__item' do %>
+                <%= link_to illness.name, '#', data: { id: illness.id }, class: 'select-illnesses__item-link select-illnesses__item-linkJS' %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
