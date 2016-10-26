@@ -4,7 +4,7 @@
   <%= f.text_area :description %>
 
   <%= content_tag :h2, t('.age_ranges') %>
-  <%= f.fields_for :organization_ages do |age_range| %>
+  <%= f.fields_for :ages do |age_range| %>
     <%= content_tag :div, class: 'form-inline' do %>
       <%= age_range.text_field :min %>
       <%= age_range.text_field :max %>
@@ -12,7 +12,7 @@
     <% end %>
   <% end %>
   <%= content_tag :p do %>
-    <%= f.link_to_add t('.add_age_range'), :organization_ages, class: 'btn btn-sm btn-primary' %>
+    <%= f.link_to_add t('.add_age_range'), :ages, class: 'btn btn-sm btn-primary' %>
   <% end %>
 
   <%= content_tag :h2, t('.illnesses') %>
