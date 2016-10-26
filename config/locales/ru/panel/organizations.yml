@@ -21,6 +21,9 @@ ru:
       update:
         success: 'Организация обновлена'
       form:
+        age_ranges: 'Возрастные группы'
+        add_age_range: 'Добавить'
+        remove_age_range: 'Удалить'
         illnesses: 'Болезни'
         add_illness: 'Добавить'
         remove_illness: 'Удалить'

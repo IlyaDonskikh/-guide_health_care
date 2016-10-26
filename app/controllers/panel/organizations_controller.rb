@@ -49,6 +49,7 @@ module Panel
       def organization_params
         params.require(:organization).permit(
           :name, :description, :address,
+          organization_ages_attributes: [:id, :min, :max, :_destroy],
           organization_illnesses_attributes: [:id, :illness_id, :_destroy]
         )
       end

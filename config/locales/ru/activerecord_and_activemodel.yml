@@ -17,3 +17,7 @@ ru:
       organization_illness:
         organization_id: 'Организация'
         illness_id: 'Болезнь'
+      organization_age:
+        organization_id: 'Организация'
+        min: 'От'
+        max: 'До'
