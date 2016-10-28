@@ -17,3 +17,5 @@ ru:
         title: 'Редактировать болезнь'
       update:
         success: 'Болезнь обновлена'
+      destroy:
+        success: 'Болезнь удалена'

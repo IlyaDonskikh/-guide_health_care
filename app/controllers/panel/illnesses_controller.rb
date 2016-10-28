@@ -33,7 +33,7 @@ module Panel
 
     def destroy
       @illness.destroy
-      redirect_to panel_illnesses_path
+      redirect_to panel_illnesses_path, notice: t('.success')
     end
 
     private
