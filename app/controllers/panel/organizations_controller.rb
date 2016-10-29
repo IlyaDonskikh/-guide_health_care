@@ -33,7 +33,8 @@ module Panel
 
     def destroy
       @organization.destroy
-      redirect_to panel_organizations_path
+
+      redirect_to panel_organizations_path, notice: t('.success')
     end
 
     private

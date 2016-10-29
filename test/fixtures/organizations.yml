@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Organization 1
   description: 
   address: MyString
   latitude: 1.5
   longitude: 1.5
 
 two:
-  name: MyString
+  name: Organization 2
   description: 
   address: MyString
   latitude: 1.5
